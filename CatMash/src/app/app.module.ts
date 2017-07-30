@@ -10,16 +10,19 @@ var modules = [
     HttpModule,
     RouterModule.forRoot([
         { path: '', component: MatchComponent },
+        { path: 'leaderboard', component: LeaderboardComponent },
         { path: '**', component: MatchComponent }
     ]),
 ];
 
 import { AppComponent } from './app.component';
 import { MatchComponent } from './match/match.component';
+import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 
 var components = [
     AppComponent,
-    MatchComponent
+    MatchComponent,
+    LeaderboardComponent
 ];
 
 import { CatService } from './_services/cat.service';

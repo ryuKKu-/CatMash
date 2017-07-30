@@ -1,0 +1,19 @@
+﻿<div id="leaderboard">
+  <ng-template ngFor let-cat [ngForOf]="cats" let-i="index+1">
+    <div class="cat-item">
+      <div class="image" [ngStyle]="{'background': 'url('+ cat.imageUrl +') center center / cover no-repeat'}">
+        <div class="reward" *ngIf="i == 1">
+          <img src="../../assets/winner.png" />
+        </div>
+      </div>
+      <div class="infos"> 
+        <div class="name">{{cat.name}}</div>
+        <div class="rating">{{cat.rating}}</div>
+        <div class="kda">Wins: {{cat.wins}}/ Looses: {{cat.looses}}</div>
+      </div>
+      <div class="stats">
+        <a [routerLink]="['/stats', cat.catId]">STATS.</a>
+      </div>
+    </div>
+  </ng-template>
+</div>
