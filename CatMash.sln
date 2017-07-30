@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMash", "CatMash\CatMash.csproj", "{F50B7B6D-CD1B-4326-9C53-ABA3B0FB189E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CatMash", "CatMash\CatMash.csproj", "{F50B7B6D-CD1B-4326-9C53-ABA3B0FB189E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CatMashUnitTest", "CatMashUnitTest\CatMashUnitTest.csproj", "{CF56F140-AA34-4CB2-9EB2-07549A47EBD3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{F50B7B6D-CD1B-4326-9C53-ABA3B0FB189E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F50B7B6D-CD1B-4326-9C53-ABA3B0FB189E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F50B7B6D-CD1B-4326-9C53-ABA3B0FB189E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF56F140-AA34-4CB2-9EB2-07549A47EBD3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF56F140-AA34-4CB2-9EB2-07549A47EBD3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF56F140-AA34-4CB2-9EB2-07549A47EBD3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF56F140-AA34-4CB2-9EB2-07549A47EBD3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
