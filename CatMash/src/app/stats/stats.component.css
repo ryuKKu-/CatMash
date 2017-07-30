@@ -1,0 +1,94 @@
+﻿#stats {
+  box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  margin: 150px 10px 0 10px;
+}
+
+#stats h2 {
+  padding: 0 20px;
+}
+
+#cat {
+  position: relative;
+}
+
+.infos {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  color: #fff;
+}
+
+.total-matchs, .rating {
+  background-color: rgba(0,0,0,.8);
+  padding: 5px;
+  display: inline-block;
+}
+
+.total-matchs {
+  margin-bottom: 5px;
+}
+
+.image {
+  width: 75px;
+  height: 75px;
+  border-radius: 75px;
+  -webkit-border-radius: 75px;
+  -moz-border-radius: 75px;
+  position: relative;
+}
+
+.opponent {
+  cursor: pointer;
+  margin: 5px 20px;
+}
+
+.match-item {
+  padding: 5px 20px;
+  display: flex;
+  align-items: center;
+  transition: .3s ease-in;
+}
+
+  .match-item:hover {
+    box-shadow: inset 0px 0px 4px 0px rgba(46, 46, 46, 0.7);
+  }
+
+.vs {
+  font-size: 24px;
+  color: #e98c8c;
+}
+
+.result div:nth-child(1) {
+  font-size: 32px;
+}
+
+.time {
+  margin-left: 50px;
+}
+
+.ripple {
+  overflow: hidden;
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background: #808080;
+  animation: ripple-animation 2s;
+}
+
+
+@keyframes ripple-animation {
+  from {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+
+  to {
+    transform: scale(100);
+    opacity: 0;
+  }
+}

@@ -51,7 +51,7 @@
   opacity: 1;
 }
 
-  .profile:not(.inactive):hover .image-rounded {
+  .profile:not(.inactive):hover img {
     opacity: 0.3;
   }
 
@@ -69,15 +69,12 @@
     font-size: 40px;
   }
 
-.image-rounded {
-  transition: .5s ease;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
+.profile img {
   width: 400px;
   height: 500px;
+  object-fit: cover;
+  transition: .5s ease;
+  display: block;
 }
 
 .dead-sentence {

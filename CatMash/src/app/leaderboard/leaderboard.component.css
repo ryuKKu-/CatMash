@@ -18,17 +18,21 @@
   }
 
 .image {
-  width: 100px;
-  height: 100px;
-  border-radius: 150px;
-  -webkit-border-radius: 150px;
-  -moz-border-radius: 150px;
   position: relative;
 }
 
+  .image > img {
+    width: 100px;
+    height: 100px;
+    border-radius: 150px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    object-fit: cover;
+  }
+
 .reward {
   position: absolute;
-  right: 0;
+  top: 0;
 }
 
 .reward img {

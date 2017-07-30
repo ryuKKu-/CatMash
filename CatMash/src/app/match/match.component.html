@@ -4,7 +4,7 @@
       <div class="overlay">
           <span class="entypo-heart"></span>
       </div>
-      <div class="image-rounded" [ngStyle]="styleA"></div>
+      <img [src]="catA?.imageUrl"/>
       <div class="dead-sentence" *ngIf="killA">
         <span>KO.</span>
       </div>
@@ -21,7 +21,7 @@
       <div class="overlay">
           <span class="entypo-heart"></span>
       </div>
-      <div class="image-rounded" [ngStyle]="styleB"></div>
+      <img [src]="catB?.imageUrl" />
       <div class="dead-sentence" *ngIf="killB">
         <span>KO.</span>
       </div>

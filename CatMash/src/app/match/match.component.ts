@@ -12,9 +12,6 @@ export class MatchComponent implements OnInit {
     public catB: Cat;
     private matchId: number;
 
-    public styleA = {};
-    public styleB = {};
-
     public killA: boolean = false;
     public killB: boolean = false;
     public loadingA: boolean = true;
@@ -55,21 +52,11 @@ export class MatchComponent implements OnInit {
             this.killB = false;
             this.loadingA = false;
             this.loadingB = false;
-
-            this.styleA = this.createStyle(this.catA);
-            this.styleB = this.createStyle(this.catB);
-
             this.matchId = match.matchId;
         });
     }
 
     inactive() {
         return this.killA || this.killB || this.loadingA || this.loadingB;
-    }
-
-    private createStyle(cat: Cat) {
-        return {
-            'background': 'url("' + cat.imageUrl + '") center center / cover no-repeat',
-        }
     }
 }
