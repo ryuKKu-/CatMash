@@ -1,3 +1,16 @@
-<h1>
-  {{title}}
-</h1>
+﻿<main>
+  <div id="header">
+    <img src="../assets/catlogo.png" />
+    <h1>
+      <a routerLink="/">CATMASH</a>
+    </h1>
+  </div>
+
+  <router-outlet></router-outlet>
+
+  <div id="footer" *ngIf="currentUrl == '/'">
+    <a class="border-animated" routerLink="/leaderboard">
+      <span>Voir les plus beaux chats</span>
+    </a>
+  </div>
+</main> 

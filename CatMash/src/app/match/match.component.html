@@ -1,0 +1,33 @@
+﻿<div id="match">
+  <section class="match-container">
+    <div class="profile" (click)="select(0)" [ngClass]="{'inactive': inactive()}" *ngIf="!loadingA">
+      <div class="overlay">
+          <span class="entypo-heart"></span>
+      </div>
+      <div class="image-rounded" [ngStyle]="styleA"></div>
+      <div class="dead-sentence" *ngIf="killA">
+        <span>KO.</span>
+      </div>
+    </div>
+    <div *ngIf="loadingA">
+      <div class="loading"></div>
+    </div>
+  </section>
+  <section id="middle">
+    <span>VS.</span>
+  </section>
+  <section class="match-container">
+    <div class="profile" (click)="select(1)" [ngClass]="{'inactive': inactive()}" *ngIf="!loadingB">
+      <div class="overlay">
+          <span class="entypo-heart"></span>
+      </div>
+      <div class="image-rounded" [ngStyle]="styleB"></div>
+      <div class="dead-sentence" *ngIf="killB">
+        <span>KO.</span>
+      </div>
+    </div>
+    <div *ngIf="loadingB">
+      <div class="loading"></div>
+    </div>
+  </section>
+</div>

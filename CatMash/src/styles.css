@@ -1,1 +1,157 @@
-/* You can add global styles to this file, and also import other style files */
+﻿@import url(http://weloveiconfonts.com/api/?family=entypo);
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f2f2f2;
+  font-family: 'Permanent Marker', cursive;
+}
+
+a {
+  color: #000;
+  text-decoration: none;
+}
+
+#loadingScreen {
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+main {
+  height: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+#header {
+  position: absolute;
+  z-index: 100;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+  #header img {
+    width: 75px;
+    display: block;
+    margin: auto;
+  }
+
+  #header h1 {
+    text-align: center;
+    margin: 0;
+  }
+
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  padding: 20px;
+  width: 250px;
+  transform: translateX(-50%);
+  text-align: center;
+}
+
+.border-animated {
+  display: inline-block;
+}
+
+  .border-animated:hover span:after,
+  .border-animated:focus span:after {
+    transform: translate3d(0, 0, 0);
+  }
+
+  .border-animated span {
+    position: relative;
+    overflow: hidden;
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+
+    .border-animated span:after {
+      background-color: #000;
+      content: "";
+      display: block;
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      transform: translate3d(-70%, 0, 0);
+      transition: transform .2s ease-in;
+    }
+
+.loading,
+.loading::before,
+.loading::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-left-color: rgba(0, 0, 0, 0.4);
+  -webkit-border-radius: 999px;
+  -moz-border-radius: 999px;
+  border-radius: 999px;
+}
+
+.loading {
+  margin: -25px 0 0 -25px;
+  height: 50px;
+  width: 50px;
+  -webkit-animation: animation-rotate 1000ms linear infinite;
+  -moz-animation: animation-rotate 1000ms linear infinite;
+  -o-animation: animation-rotate 1000ms linear infinite;
+  animation: animation-rotate 1000ms linear infinite;
+}
+
+  .loading::before {
+    content: "";
+    margin: -23px 0 0 -23px;
+    height: 44px;
+    width: 44px;
+    -webkit-animation: animation-rotate 1000ms linear infinite;
+    -moz-animation: animation-rotate 1000ms linear infinite;
+    -o-animation: animation-rotate 1000ms linear infinite;
+    animation: animation-rotate 1000ms linear infinite;
+  }
+
+  .loading::after {
+    content: "";
+    margin: -29px 0 0 -29px;
+    height: 56px;
+    width: 56px;
+    -webkit-animation: animation-rotate 2000ms linear infinite;
+    -moz-animation: animation-rotate 2000ms linear infinite;
+    -o-animation: animation-rotate 2000ms linear infinite;
+    animation: animation-rotate 2000ms linear infinite;
+  }
+
+@-webkit-keyframes animation-rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@-moz-keyframes animation-rotate {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-o-keyframes animation-rotate {
+  100% {
+    -o-transform: rotate(360deg);
+  }
+}
+
+@keyframes animation-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
