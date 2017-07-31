@@ -29,6 +29,6 @@
   </ItemGroup>
   <Target Name="PrepublishScript" BeforeTargets="PrepareForPublish">
     <Exec Command="npm install" />
-    <Exec Command="npm run build" />
+    <Exec Command="npm run build:prod" />
   </Target>
 </Project>

@@ -6,6 +6,7 @@
     wins: number;
     looses: number;
     histories: History[];
+    totalMatches: number;
 }
 
 export class History {
