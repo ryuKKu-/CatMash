@@ -35,11 +35,12 @@
   height: 500px;
   max-width: 400px;
   max-height: 500px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
 }
 
-.match-container:first-of-type {
-  margin-right: 1px;
-}
+  .match-container:first-of-type {
+    margin-right: 5px;
+  }
 
 .profile {
   cursor: pointer;
