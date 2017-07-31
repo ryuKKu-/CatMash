@@ -63,10 +63,15 @@ main {
 }
 
   .border-animated:hover span:after,
-  .border-animated:focus span:after {
+  .border-animated:focus span:after,
+  .border-animated.active span:after {
     transform: translate3d(0, 0, 0);
   }
 
+  .border-animated.active span:after {
+    background-color: #e98c8c;
+  } 
+  
   .border-animated span {
     position: relative;
     overflow: hidden;

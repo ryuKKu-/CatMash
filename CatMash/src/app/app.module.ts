@@ -5,6 +5,8 @@ import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { MomentModule } from 'angular2-moment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+
 
 var modules = [
     BrowserModule,
@@ -17,7 +19,8 @@ var modules = [
         { path: '**', component: MatchComponent }
     ]),
     MomentModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgxChartsModule
 ];
 
 import { AppComponent } from './app.component';

@@ -1,4 +1,4 @@
-﻿<div id="stats">
+﻿<div id="profile">
   <div id="cat">
     <img [src]="cat?.imageUrl" [ngStyle]="{'width': '100%', 'height': '200px', 'object-fit': 'cover', 'object-position': '50% 25%'}"/>
     <div class="infos">
@@ -7,21 +7,42 @@
       <div class="rating">Rating: {{cat?.rating}}</div>
     </div>
   </div>
-  <div id="matches">
-    <h2 class="border-animated"><span>Match history</span></h2>
-    <ng-template ngFor let-match [ngForOf]="matchesHistory">
-      <div class="match-item">
-        <div class="vs">VS.</div>
-        <div class="opponent" [routerLink]="['/stats', match.opponent.catId]">
-          <img [src]="match.opponent.imageUrl" [alt]="match.opponent.catId" [ngStyle]="{'width': '75px', 'height': '75px', 'border-radius': '75px', 'object-fit': 'cover'}"/>
+  <div id="container">
+    <div>
+      <h2 class="border-animated" (click)="switchTab(0)" [ngClass]="{'active': tab == 0}"><span>Match history</span></h2>
+      <h2 class="border-animated" (click)="switchTab(1)" [ngClass]="{'active': tab == 1}"><span>Stats</span></h2>
+    </div>
+    <div id="matches" *ngIf="tab == 0 && matchesHistory?.length > 0">
+      <ng-template ngFor let-match [ngForOf]="matchesHistory">
+        <div class="match-item">
+          <div class="vs">VS.</div>
+          <div class="opponent" [routerLink]="['/stats', match.opponent.catId]">
+            <img [src]="match.opponent.imageUrl" [alt]="match.opponent.catId" [ngStyle]="{'width': '75px', 'height': '75px', 'border-radius': '75px', 'object-fit': 'cover'}" />
+          </div>
+          <div class="result">
+            <div *ngIf="match.result">WIN</div>
+            <div *ngIf="!match.result">LOOSE</div>
+            <div>Score: {{match.newRating | plusMinus}}</div>
+          </div>
+          <div class="time">{{match.date | amCalendar}}</div>
         </div>
-        <div class="result">
-          <div *ngIf="match.result">WIN</div>
-          <div *ngIf="!match.result">LOOSE</div>
-          <div>Score: {{match.newRating | plusMinus}}</div>
-        </div>
-        <div class="time">{{match.date | amCalendar}}</div>
-      </div>
-    </ng-template>
+      </ng-template>
+    </div>
+    <div id="stats" *ngIf="tab == 1 && matchesHistory?.length > 0">
+        <ngx-charts-area-chart [results]="values"
+                               [view]="view"
+                               [gradient]="true"
+                               [showGridLines]="false"
+                               [scheme]="colorScheme"
+                               [xAxis]="showXAxis"
+                               [yAxis]="showYAxis"
+                               [legend]="showLegend"
+                               [showXAxisLabel]="showXAxisLabel"
+                               [showYAxisLabel]="showYAxisLabel"
+                               [xAxisLabel]="xAxisLabel"
+                               [yAxisLabel]="yAxisLabel"
+                               [autoScale]="true">
+        </ngx-charts-area-chart>
+    </div>
   </div>
 </div>

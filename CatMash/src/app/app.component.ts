@@ -12,6 +12,7 @@ export class AppComponent {
     constructor(private _router: Router) {
         _router.events.subscribe((value: NavigationEnd) => {
             this.currentUrl = value.url;
+            window.scrollTo(0, 0);
         });
     }
 }

@@ -2,6 +2,7 @@
 import { CatService } from '../_services/cat.service';
 import { Cat } from '../_model/models';
 import { ActivatedRoute } from '@angular/router';
+import * as moment from 'moment';
 
 class MatchHistory {
     date: string;
@@ -16,12 +17,28 @@ class MatchHistory {
     styleUrls: ['./stats.component.css'],
 })
 export class StatsComponent implements OnInit {
-    public cat: Cat;
-    public matchesHistory: MatchHistory[];
+    cat: Cat;
+    matchesHistory: MatchHistory[];
+
+    view: any[] = [760, 400];
+    values: any[] = [];
+    showLegend = false;
+    showXAxis = false;
+    showXAxisLabel = false;
+    showYAxis = true;
+    showYAxisLabel = true;
+    yAxisLabel = 'Elo Rating';
+    colorScheme = {
+        domain: ['#e98c8c']
+    };
+
+    tab: number = 0;
 
     constructor(private _catService: CatService, private _route: ActivatedRoute) { }
 
     ngOnInit() {
+        let ratingSeries = [];
+
         this._route.params.subscribe(params => {
             this._catService.getCat(params['id']).subscribe(cat => {
                 this.cat = cat;
@@ -42,8 +59,15 @@ export class StatsComponent implements OnInit {
                     let ratingBefore = (history.match.catA !== undefined) ? history.match.ratingB : history.match.ratingA;
                     matchHistory.newRating = history.rating - ratingBefore;
 
+                    ratingSeries.push({ "name": moment(history.date).format('DD/MM/YYYY HH:mm:ss'), "value": history.rating });
+
                     return matchHistory;
                 });
+
+                this.values = [{
+                    name: "rating",
+                    series: ratingSeries
+                }];
 
                 this.matchesHistory.sort((a, b) => {
                     let dateA = new Date(a.date);
@@ -52,5 +76,9 @@ export class StatsComponent implements OnInit {
                 });
             });
         });
+    }
+
+    switchTab(value) {
+        this.tab = value;
     }
 }
